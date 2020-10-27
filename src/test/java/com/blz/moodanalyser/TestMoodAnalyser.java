@@ -83,17 +83,17 @@ public class TestMoodAnalyser {
 			Assert.assertEquals("invalid mood", exception.getMessage());
 		}
 	}
-
-	// TC-3.2
-	@Test
-	public void givenMood_EmptyMood_ShouldThrowException() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser("");
-		String mood = null;
-		try {
-			mood = moodAnalyser.analyseMood();
-		} catch (MoodAnalyserException exception) {
-			Assert.assertEquals("empty mood", exception.getMessage());
-		}
-	}
+	
+	 //TC-3.2
+    @Test
+    public void givenMood_EmptyMood_ShouldThrowException() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        String mood = null;
+        try {
+            mood = moodAnalyser.analyseMood();
+        } catch (MoodAnalyserException exception) {
+            Assert.assertEquals("empty mood", exception.getMessage());
+        }
+    }
 
 }
