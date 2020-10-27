@@ -19,4 +19,12 @@ public class TestMoodAnalyser {
 		Assert.assertEquals("happy", mood);
 	}
 
+	// repeat TC-1.1
+	@Test
+	public void testGivenMessage_NoParameter_ShouldReturnSad() {
+		MoodAnalyser moodAnalyzer = new MoodAnalyser("i am in sad mood");
+		String mood = moodAnalyzer.analyseMood();
+		Assert.assertEquals("sad", mood);
+	}
+
 }
