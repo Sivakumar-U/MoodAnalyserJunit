@@ -1,32 +1,31 @@
 package com.blz.moodanalyser;
 
 public class MoodAnalyser {
-	private String message;
+	private final String message;
 
 	public MoodAnalyser() {
-		message = "This is sad message";
+		message = "This is happy message";
 	}
 
 	public MoodAnalyser(String message) {
 		this.message = message;
 	}
 
-	public String analyseMood(String message) {
+	public String analyseMood()throws MoodAnalyserException {
 		try {
+			if(message.length()==0) {
+				throw new MoodAnalyserException(MoodAnalyserException.exceptionType.ENTERED_EMPTY,"empty mood");
+			}
 			if (message.contains("sad")) {
 				return "sad";
 			} else {
 				return "happy";
 			}
 		} catch (NullPointerException ex) {
-			ex.printStackTrace();
-			return "happy";
+			throw new MoodAnalyserException(MoodAnalyserException.exceptionType.ENTERED_NULL,"invalid mood");
 		}
 	}
 
-	public String analyseMood() {
-		this.message = message;
-		return analyseMood(this.message);
-	}
+	
 
 }
